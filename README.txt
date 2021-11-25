@@ -8,4 +8,11 @@ Install
         npm install -g @angular/cli@10
         ng version
         ng new helloworld
+        cd helloworld
+        code .
+        ng serve
+
+Component
+        ng g c nom_component
+
 
