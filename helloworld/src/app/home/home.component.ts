@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+
+title="hello world";
+msg;
+name:string;
+value:boolean;
+
+imageURL="assets/images/img2.jpg";
+
+date=new Date();
+
+nameList=['Ahmed','Imen','Ilyes'];
+condition=false
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
 
 }

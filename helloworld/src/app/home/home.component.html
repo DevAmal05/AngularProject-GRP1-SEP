@@ -1,2 +1,44 @@
 <h1>Hello world!</h1>
-<button routerLink="/test">Test</button>
+<h1>{{date | date:'medium' }}</h1>
+<h1>{{300 | currency:'TND'}}</h1>
+<p>{{'HELLO WORLD' | lowercase}}</p>
+
+<ul *ngFor="let name of nameList">
+    <li>{{name}}</li>
+   
+</ul>
+<div *ngIf="condition">
+    <p>Bienvenue</p>
+</div>
+<img [src]="imageURL" width="100px">
+<button routerLink="/test" type="button" class="btn btn-info">Test</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>

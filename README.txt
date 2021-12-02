@@ -15,4 +15,9 @@ Install
 Component
         ng g c nom_component
 
+Bootstrap
+        npm install bootstrap
+         "node_modules/bootstrap/dist/css/bootstrap.min.css" (angular.json)
+
+
 
