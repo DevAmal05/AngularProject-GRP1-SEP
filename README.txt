@@ -16,6 +16,7 @@ Component
         ng g c nom_component
 
 Bootstrap
+        https://getbootstrap.com/docs/5.1/getting-started/introduction/
         npm install bootstrap
          "node_modules/bootstrap/dist/css/bootstrap.min.css" (angular.json)
 
