@@ -1,0 +1,43 @@
+<form [formGroup]="myForm">
+   
+    <div class="container">
+    <div class="col-3">
+
+<label>Firstname</label>
+<input class="form-control" type="text" name="firstname"formControlName="firstname">
+    <div *ngIf="firstname.touched && firstname.invalid">
+<small class="text-danger" *ngIf="firstname.errors.required">Firstname is required</small>
+<small class="text-danger" *ngIf="firstname.errors.pattern">Firstname is invalid</small>
+    </div>
+
+
+    <label>Lastname</label>
+    <input class="form-control" type="text" name="lastname" formControlName="lastname">
+    <div *ngIf="lastname.touched && lastname.invalid">
+        <small class="text-danger" *ngIf="lastname.errors.required">Lastname is required</small>
+        <small class="text-danger" *ngIf="lastname.errors.pattern">Lastname is invalid</small>
+            </div>
+
+    <label>Phone</label>
+    <input class="form-control" type="text" name="phone" formControlName="phone">
+    <div *ngIf="phone.touched && phone.invalid">
+        <small class="text-danger" *ngIf="phone.errors.required">Phone is required</small>
+        <small class="text-danger" *ngIf="Phone.errors.pattern">Phone is invalid</small>
+        <small class="text-danger" *ngIf="Phone.errors.minlength">Phone must be 8 characters at Least</small>
+            </div>
+
+    <label>Email</label>
+    <input class="form-control" type="email" name="email" formControlName="email">
+    <div *ngIf="email.touched && email.invalid">
+        <small class="text-danger" *ngIf="email.errors.required">Email is required</small>
+        <small class="text-danger" *ngIf="email.errors.email">email is invalid</small>
+            </div>
+
+    <br>
+
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+</div>
+</div>
+
+
+</form>
