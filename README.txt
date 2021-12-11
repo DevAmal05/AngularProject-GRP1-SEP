@@ -28,4 +28,11 @@ Primeng
         "node_modules/primeng/resources/primeng.min.css"
 
 
+Toastr
+        https://www.npmjs.com/package/ngx-toastr/v/13.2.1
+        npm install ngx-toastr@13 --save
+
+Firebase
+        npm install firebase@8 --save
+        npm install --save firebase @angular/fire@6
 

@@ -9,6 +9,10 @@ import { Page404Component } from './page404/page404.component';
 import {ButtonModule} from 'primeng/button';
 import {TabMenuModule} from 'primeng/tabmenu';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 import { RegisterComponent } from './register/register.component';
 
 
@@ -23,6 +27,9 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
     TabMenuModule,
     FormsModule,
     ReactiveFormsModule,

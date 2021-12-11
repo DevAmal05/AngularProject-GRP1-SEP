@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,FormControl,Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { User } from '../user';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +10,7 @@ import { FormGroup,FormBuilder,FormControl,Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   myForm:FormGroup
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:FormBuilder,private toastr: ToastrService) { 
     let formControls={
       firstname:new FormControl('',[
         Validators.required,
@@ -45,6 +47,13 @@ export class RegisterComponent implements OnInit {
   }
   
   ngOnInit(): void {
+  }
+
+  save() {
+  let data=this.myForm.value;
+  let user=new User(data.firstname,data.lastname,data.phone,data.email);
+  console.log(user)
+    this.toastr.success('WELCOME!');
   }
 
 }
