@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup,FormBuilder,FormControl,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -6,10 +10,42 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginForm:FormGroup
+  errorMessage: any;
 
-  constructor() { }
+  constructor(private fb:FormBuilder,private authservice:AuthService,private toastr: ToastrService,private router:Router) { }
 
   ngOnInit(): void {
+    this.initForm()
+  }
+  initForm() {
+    this.loginForm=this.fb.group( {
+      email:new FormControl('',[
+        Validators.required,
+        Validators.email
+      ]),
+      password:new FormControl('',[
+        Validators.required,
+        Validators.minLength(6)
+      ])
+    }
+    )
+  }
+  login(){
+    const email=this.loginForm.get('email').value;
+    const password=this.loginForm.get('password').value;
+    this.authservice.signInUser(email,password).then(
+      () => {
+        this.router.navigate(['/users']);
+        this.toastr.success('Welcome !' );
+       
+      },
+      (error) => {
+        this.errorMessage=error
+        this.toastr.error('Sorry You have a problem! ','verify your email or password!!' );
+        
+      }
+    )
   }
 
 }
